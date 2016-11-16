@@ -1,5 +1,6 @@
 <?php
-
-    echo "Total activated numbers of distributor";
+	$name = "sumeet";
+	echo $name;
+    echo "my name is $name";
 
 ?>    
