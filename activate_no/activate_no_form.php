@@ -109,13 +109,11 @@
 
                 if ($phone_no<=$to & $phone_no>=$from){
                 	$distributor = $row1['distributor'];
+                    $district = $row1['district'];
 
-     				mysql_query("INSERT activate_no SET phone_no='$phone_no', distributor='$distributor', date='$date'")
+     				mysql_query("INSERT activate_no SET phone_no='$phone_no', distributor='$distributor', date='$date', district='$district'")
 
 			         or die(mysql_error());
-
-
-
             
                 }
        //          

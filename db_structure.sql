@@ -28,14 +28,19 @@ FOREIGN KEY (district)
 	REFERENCES district(id)
 	ON DELETE CASCADE
 );
-CREATE TABLE activation_no (
+CREATE TABLE activate_no (
 id INT NOT NULL AUTO_INCREMENT,
 phone_no BIGINT NOT NULL,
 distributor INT NOT NULL,
 date DATE,
+district INT NOT NULL,
 PRIMARY KEY (id),
 FOREIGN KEY (distributor)
 	REFERENCES distributor(id)
+	ON DELETE CASCADE,
+FOREIGN KEY (district)
+	REFERENCES district(id)
 	ON DELETE CASCADE
 );
+
 
