@@ -2,12 +2,12 @@
 
 CREATE TABLE district (
 id INT NOT NULL AUTO_INCREMENT,  
-district VARCHAR(50) NOT NULL, 
+district_name VARCHAR(50) NOT NULL, 
 PRIMARY KEY (id)
 );
 CREATE TABLE distributor (
 id INT NOT NULL AUTO_INCREMENT,
-distributor VARCHAR(50) NOT NULL,
+distributor_name VARCHAR(50) NOT NULL,
 PRIMARY KEY (id)
 );
 CREATE TABLE sim_details (

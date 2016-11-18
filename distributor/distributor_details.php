@@ -64,7 +64,7 @@
 			        while($row = mysql_fetch_array($result)) {
 	    	            echo '<tr>';
 	    	            echo '<td>'. $row['id'].'</td>';
-	    	            echo '<td>'. $row['distributor'].'</td>';
+	    	            echo '<td>'. $row['distributor_name'].'</td>';
 	    	            $distributor_id = $row['id'];
 	    	            $total_number = getdistributortotalnumber($distributor_id);
 	    	            echo '<td>'. $total_number .' <a href="distributor_total_no.php/?distributor_id='.$distributor_id.'"><button> details!</button></a></td>';

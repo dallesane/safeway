@@ -69,14 +69,14 @@ if ($error != '')
 			        
 			      	if ($distributor == $row['id']){
 
-			      		echo '<option selected="selected" value="'.$row['id'].'">"'.$row['distributor'].'"</option>';
+			      		echo '<option selected="selected" value="'.$row['id'].'">"'.$row['distributor_name'].'"</option>';
 			      		// echo '<option selected="selected" value="'.$row['id'].'">"'.$row['district_name'].'"</option>';
 			      		
 
 
 			      	}else{
 
-			      		echo '<option value="'.$row['id'].'">"'.$row['distributor'].'"</option>';
+			      		echo '<option value="'.$row['id'].'">"'.$row['distributor_name'].'"</option>';
 			      		// echo '<option value="'.$row['id'].'">"'.$row['district_name'].'"</option>';
 			      		
 
@@ -112,14 +112,14 @@ if ($error != '')
 			        
 			      	if ($district == $row['id']){
 
-			      		echo '<option selected="selected" value="'.$row['id'].'">"'.$row['district'].'"</option>';
+			      		echo '<option selected="selected" value="'.$row['id'].'">"'.$row['district_name'].'"</option>';
 			      		// echo '<option selected="selected" value="'.$row['id'].'">"'.$row['district_name'].'"</option>';
 			      		
 
 
 			      	}else{
 
-			      		echo '<option value="'.$row['id'].'">"'.$row['district'].'"</option>';
+			      		echo '<option value="'.$row['id'].'">"'.$row['district_name'].'"</option>';
 			      		// echo '<option value="'.$row['id'].'">"'.$row['district_name'].'"</option>';
 			      		
 
