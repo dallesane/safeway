@@ -133,17 +133,17 @@
                 <!-- <th>distributor</th> -->
                 <th>disrict</th>
                 </tr>
-             <!-- <?php -->
-                // foreach($total_deactivate_no as $td_row){
-                //     echo "<tr>";
-                //     echo "<td>". $td_row["date"] ."</td>";
-                //     echo "<td>". $td_row["phone_number"] ."</td>";
-                //     echo "<td>". $td_row["district"] ."</td>";
+             <?php
+                foreach($total_deactivate_no as $td_row){
+                   echo "<tr>";
+                   echo "<td>". $td_row["date"] ."</td>";
+                   echo "<td>". $td_row["phone_number"] ."</td>";
+                   echo "<td>". $td_row["district"] ."</td>";
 
 
-                //     echo "</tr>";
+                   echo "</tr>";
 
-                // }
+                }
              ?>   
 
             </table>
