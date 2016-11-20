@@ -55,7 +55,7 @@
 		            echo "<td>" . $row['date'] . "</td>";
 		            echo "<td>" . $row['phone_no'] . "</td>";
 		            echo "<td>" . $row['distributor'] . "</td>";
-		            echo "<td>" . $row['district_name'] . "</td>";
+		            echo "<td>" . $row['district'] . "</td>";
 		            echo "</tr>";
 		        }
 		        echo "</table>";

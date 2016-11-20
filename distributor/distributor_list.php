@@ -16,8 +16,8 @@
 			        while($row = mysql_fetch_array($result)) {
 	    	             echo '<tr>';
 	    	             echo '<td>'. $row['id'].'</td>';
-	    	             echo '<td>'. $row['distributor'].'</td>';
-	    	             echo '<td>'. $row['district'].'</td>';
+	    	             echo '<td>'. $row['distributor_name'].'</td>';
+	    	             // echo '<td>'. $row['district'].'</td>';
 	    	             echo '</tr>';
 
 	    	        }

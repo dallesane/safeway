@@ -45,7 +45,7 @@
                     $from = $row['phone_number_from_range'];
                     $to = $row['phone_number_to_range'];
                     $date = $row['date'];
-                    $district = $row['district_name'];
+                    $district = $row['district'];
                 
                     while($from <= $to){
                         // echo $from;
