@@ -1,6 +1,11 @@
 <html> 
 <body> 
 
+        <form action="" method="post">
+        Beginning Time : <input style="width:100px;" type="text" name="BeginningTime" value="2016-11-23" />&ensp;Ending time : <input style="width:100px;" type="text" name="EndingTime" value="2016-11-23" />&ensp;<input type='submit'>
+
+
+
         <style>
             table {
                 font-family: arial, sans-serif;
@@ -17,7 +22,8 @@
             tr:nth-child(even) {
                 background-color: #dddddd;
             }
-        </style>    
+        </style> 
+   
 
         <div class="container">   
         <table class="table stripped">
@@ -34,9 +40,10 @@
            include("../connect_db.php");
            $distributor_id = $_GET['distributor_id'];
             
-                $query = "SELECT * FROM sim_details WHERE distributor='$distributor_id'";
-
+                // $query = "SELECT * FROM sim_details WHERE distributor='$distributor_id'";
+                $query = "SELECT * FROM sim_details INNER JOIN district ON sim_details.district=district.id AND sim_details.distributor=$distributor_id";
                 $result = mysql_query($query);
+                // $result = mysql_query($query);
 
                  // echo "hello";
 

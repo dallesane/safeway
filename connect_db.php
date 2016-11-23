@@ -8,7 +8,7 @@ if(! $conn )
 	{
 	  die('Could not connect: ' . mysql_error());
 	}
-echo 'Connected successfully';
+// echo 'Connected successfully';
 	
 
 $db_selected= mysql_select_db ('safeway', $conn);

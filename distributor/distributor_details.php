@@ -41,7 +41,7 @@
 		table, th, td {
 		    border: 3px solid black;
 		}
-		</style>>
+		</style>
 
 			<table>
 			  <tr>

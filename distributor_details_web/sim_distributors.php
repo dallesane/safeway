@@ -47,41 +47,6 @@
                 background-color: #dddddd;
             }
            
-		/*div.container {
-		    width: 100%;
-		    border: 1px solid gray;
-		}
-
-		header, footer {
-		    padding: 1em;
-		    color: white;
-		    background-color: black;
-		    clear: left;
-		    text-align: center;
-		}
-
-		nav {
-		    float: left;
-		    max-width: 160px;
-		    margin: 0;
-		    padding: 1em;
-		}
-
-		nav ul {
-		    list-style-type: none;
-		    padding: 0;
-		}
-		   
-		nav ul a {
-		    text-decoration: none;
-		}
-
-		article {
-		    margin-left: 170px;
-		    border-left: 1px solid gray;
-		    padding: 1em;
-		    overflow: hidden;
-		}*/
 		</style>
 		</div>
 		
@@ -95,7 +60,9 @@
 		<nav>
 		  <ul>
 		    <li><a href="activate_no_form.php">Add new activated numbers</a></li>
+		    <br>
 		    <li><a href="distributor_form.php">Add new distributor</a></li>
+		    <br>
 		    <li><a href="sim_details_form.php">Add new distributor sim details</a></li>
 		    
 		  </ul>
