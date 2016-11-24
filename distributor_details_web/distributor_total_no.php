@@ -131,7 +131,7 @@
            include("../connect_db.php");
 
            $input_name_lists = array("issued_date_start", "issued_date_end", "distributor", "district");
-           $query = "SELECT * FROM sim_details INNER JOIN district ON ";
+           $query = "SELECT * FROM sim_details INNER JOIN district ON sim_details.district=district.id AND ";
            $counter = 0;
            foreach($input_name_lists as $input_name){
               // echo empty($_GET[$input_name]);
@@ -143,17 +143,17 @@
                 $and = " AND ";
               }
               if(!empty($_GET[$input_name]) && $input_name == "issued_date_start"){
-                $query .= $and."sim_details.date>=".$_GET[$input_name]; 
+                $query .= $and."sim_details.date>='".$_GET[$input_name]."'"; 
                 $counter += 1;
               }elseif(!empty($_GET[$input_name]) && $input_name == "issued_date_end"){
-                $query .= $and."sim_details.date<=".$_GET[$input_name]; 
+                $query .= $and."sim_details.date<='".$_GET[$input_name]."'"; 
                 $counter += 1;
               }elseif(!empty($_GET[$input_name])){
                 $query .= $and."sim_details.".$input_name."=".$_GET[$input_name]; 
                 $counter += 1;
               }
             }
-            echo $query;
+            
             
             
             // $query = "SELECT * FROM sim_details INNER JOIN district ON sim_details.district=district.id AND sim_details.distributor=$distributor_id";
