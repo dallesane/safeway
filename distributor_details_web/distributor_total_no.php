@@ -2,7 +2,8 @@
 <body> 
 
         <form action="" method="GET">
-        Beginning Time : <input style="width:100px;" type="text" name="BeginningTime" value="2016-11-23" />&ensp;Ending time : <input style="width:100px;" type="text" name="EndingTime" value="2016-11-23" />&ensp;
+        Beginning Time : <input type="date" name="issued_date_start" />&ensp;
+        Ending time :<input type="date" name="issued_date_end" />&ensp;
 
         <strong>district: *</strong><?php echo $district; ?><b/>
             
@@ -50,7 +51,7 @@
 
             <strong>distributor: *</strong><?php echo $distributor; ?><b/>
             
-            <select name="distributor_id">
+            <select name="distributor">
             <option selected="selected" value="">select distributor</option>
             <?php 
            
@@ -89,7 +90,7 @@
             
             </select>
 
-        <input type='submit'>
+        <input type="submit" name="submit">
         </form>
 
 
@@ -126,15 +127,38 @@
 
 
         <?php
-           include("../connect_db.php");
-           $distributor_id = $_GET['distributor_id'];
-            
-                // $query = "SELECT * FROM sim_details WHERE distributor='$distributor_id'";
-            $query = "SELECT * FROM sim_details INNER JOIN district ON sim_details.district=district.id AND sim_details.distributor=$distributor_id";
-            $result = mysql_query($query);
-            // $result = mysql_query($query);
 
-             // echo "hello";
+           include("../connect_db.php");
+
+           $input_name_lists = array("issued_date_start", "issued_date_end", "distributor", "district");
+           $query = "SELECT * FROM sim_details INNER JOIN district ON ";
+           $counter = 0;
+           foreach($input_name_lists as $input_name){
+              // echo empty($_GET[$input_name]);
+              // echo 'deli';
+              if($counter == 0){
+                $and = " ";
+
+              }else{
+                $and = " AND ";
+              }
+              if(!empty($_GET[$input_name]) && $input_name == "issued_date_start"){
+                $query .= $and."sim_details.date>=".$_GET[$input_name]; 
+                $counter += 1;
+              }elseif(!empty($_GET[$input_name]) && $input_name == "issued_date_end"){
+                $query .= $and."sim_details.date<=".$_GET[$input_name]; 
+                $counter += 1;
+              }elseif(!empty($_GET[$input_name])){
+                $query .= $and."sim_details.".$input_name."=".$_GET[$input_name]; 
+                $counter += 1;
+              }
+            }
+            echo $query;
+            
+            
+            // $query = "SELECT * FROM sim_details INNER JOIN district ON sim_details.district=district.id AND sim_details.distributor=$distributor_id";
+            $result = mysql_query($query);
+
 
             while($row=mysql_fetch_array($result)){
 
@@ -158,11 +182,7 @@
                     $from = $from + 1;
 
                 }
-                
-                  
-
-
-            } 
+            }
 
         ?>
 
